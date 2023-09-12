@@ -183,14 +183,14 @@ header{
 .btn-cont{
     display: flex;
     /* background-color: palevioletred; */
-    width: 50%;
+    width: 55%;
     justify-content: space-between;
     font-weight: bold;
     margin-top:2rem ;
 
 }
 .btn-cont div{ 
-    padding: .8rem 7%;
+    padding: .8rem 6%;
     border-radius: 40px;
     background: rgb(82,112,255);
     /* background: radial-gradient(circle, rgb(82,112,255) 0%, rgb(82,112,255) 100%); */
