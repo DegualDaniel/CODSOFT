@@ -45,6 +45,19 @@
     transition: .2s linear;   
     
   }
+  .cursor{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    transition: 0.1s;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
  
  /* HEADER */
 header{
@@ -247,6 +260,25 @@ header{
     /* background-repeat: no-repeat; 
     background-size: contain;
     background-position: top; */
+    z-index: 100;
+}
+.bg-overlap{
+    position: relative; 
+    top: -28px; 
+    height: 50vh;
+    width: 50%;
+    margin: 0 auto;
+    background-image:url(image/bg1.webp);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    /* z-index: 100; */
+
+
+}
+.bg-overlap img{
+ width: 100%;
+    
 }
 .tech-head-cnt{
     width: 100%;
@@ -254,6 +286,7 @@ header{
     padding: 4rem 0 ;
     font-size: clamp(2.3rem,1vw,2rem); 
     color: white;
+    z-index: 1000;
 }
 .tech-head-cnt h1 { 
     /* font-size: clamp(2.3rem,1vw,2rem);  */
@@ -263,11 +296,15 @@ header{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: center;
+    width: 86%;
+    margin: 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.432);
+    /* background-color: red; */
 }
 .tech-cont1{
-     border: 1px solid white;
+     border: 1px solid rgba(255, 255, 255, 0.432);
     /* background-color: yellow; */
-    width: 100%;
+    /* width: 100%; */
     padding: 40px 30px 40px 30px;
     line-height: 26.4px;
     height: 333.109px;
@@ -282,19 +319,55 @@ header{
     /* background-color: red; */
     height: 62.375px;
     width: 302.297px;
-    padding: 0 0 0 35px;
+    padding: 0 0 40px 35px;
     color: white;
 }
 .box h2{
     color: white;
+    font-size: 26px;
+    line-height:31.2px ;
+    font-weight: 600;
+    /* z-index: 100; */
 }
-.icn a{
-    /* width:42px ;
-    height:42px ; */
+.box h2 span{
+    color: white;
+    z-index: 1000; 
+}
+.software-box{
+    position: relative;
+    z-index: 100; 
+}
+.liner{
+    position: absolute;
+    top: 19px;
+    width: 132px;
+    height: 12px;
+    z-index: -1;
+    background-color:rgb(214,84,102);
+}
+.liner-2{
+    position: absolute;
+    top: 19px;
+    width: 183px;
+    height: 12px;
+    z-index: -1;
+    background-color:rgb(118,36,89);
+}
+.liner-3{
+    position: absolute;
+    width: 212px;
+    top: 19px;
+    height: 12px;
+    z-index: -1;
+    background-color:rgb(223,132,75);
+}
+
+
+
+
+.icn a{ 
     padding: 0 10px 0 0 ;
-    font-size: 2rem;
-    /* background-color: white; */
-    /* width: 80px; */
+    font-size: 2rem; 
 }
 .box2{
     width:302.297px ;
@@ -303,9 +376,19 @@ header{
     padding: 0 0 0 35px;
     color: white;
     /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.box2 div{
+    color: white;
 }
 .box2 h4{
-    color: white;
+    color: rgba(255, 255, 255, 0.986);
+    font-size: 16px;
+    font-family: fonty;
+    font-weight: 550;
 }
 
 
@@ -335,6 +418,7 @@ footer{
 
 
 
+ 
 
 
 
@@ -377,56 +461,31 @@ footer{
 
 
 
+@media screen and (max-width:1350px) {
+    /* *****EXPERTISE ******* */
+    .stack-sec{
+        /* display: grid; */
+        grid-template-columns: 1fr;
+        /* align-items: center; */
+        width: 100%;
+        /* margin: 0 auto; */
+        border:none;
+        /* background-color: red; */
+    }
+    .tech-cont1{
+        border: 1px solid rgba(255, 255, 255, 0.432);
+       /* background-color: yellow; */
+       width: 100%;
+       /* padding: 0 3%; */
+       /* padding: 40px 30px 40px 30px; */
+       line-height: 26.4px;
+       height: 333.109px;
+       /* width: 366.297px; */
+       margin: .2rem auto;
+       background-position: 0% 0%;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 /* // MEDIA QUERY MEDIUM SCREEN */
@@ -435,6 +494,8 @@ footer{
     .logo h2{ 
     font-size: 1.2rem; 
     }
+
+ 
    
 } 
 @media screen and (max-width:900px) {
@@ -453,7 +514,7 @@ footer{
         margin-top: 1rem;
         width: 90%;
         position: absolute;
-        bottom: 8rem; 
+        bottom: 2rem; 
      }
      .links a {
         margin-right: 1rem;
@@ -479,7 +540,50 @@ footer{
 .hero-link{ 
     width: 60%; 
 }
-   
+   /* ********EXPERTISE SECTION********* */
+ 
+.tech-head-cnt{ 
+    padding: 2rem 0 ;
+    font-size: clamp(1.3rem,1vw,1rem); 
+ 
+}
+.bg-overlap{
+    /* position: relative; */
+    /* position: absolute; */
+    /* top: 39px; */
+    /* bottom: 1px; */
+    top: -68px;
+    /* z-index: 1; */
+    /* background-color: yellow; */
+    width: 100%;
+    /* margin: auto; */
+    /* margin: 0 auto; */
+
+
+}
+   .stack-sec{
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    /* align-items: center; */
+    width: 100%;
+    /* margin: 0 auto; */
+    border:none;
+    /* background-color: red; */
+}
+.tech-cont1{
+    border: 1px solid rgba(255, 255, 255, 0.432);
+   /* background-color: yellow; */
+   width: 100%;
+   /* padding: 0 3%; */
+   /* padding: 40px 30px 40px 30px; */
+   line-height: 26.4px;
+   height: 333.109px;
+   /* width: 366.297px; */
+   margin: .2rem auto;
+   background-position: 0% 0%;
+}
+
+
 } 
 
 @media screen and (max-width:900px) { 
@@ -500,7 +604,7 @@ footer{
         width: 70%;
         display: flex;
         flex-direction: column;
-        padding-top: 4rem;
+        padding-top: 3rem;
         height: 100vh; 
         top: 0;
         align-items: center; 
