@@ -556,7 +556,7 @@ header{
 }
 
 
-
+/* CONTACT SECTION */
 footer{
     background-color:rgba(17, 17, 17, 0.932);
     /* background-color: whitesmoke; */
@@ -564,8 +564,17 @@ footer{
     height: 100vh;
     position: relative;
     top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
-
+.contact1{
+    background-color: rebeccapurple;
+    padding:1rem 6%;
+    
+}
+.contact2{
+    background-color: blue;
+}
 
 
  
